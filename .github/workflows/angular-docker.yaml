@@ -41,7 +41,7 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
-          echo "${{ format("Hello {0} from {1}", github.repository, github.actor) }}"
+          echo "${{ toJson(github) }}"
 
       - name: Lint
         run: npm run lint
