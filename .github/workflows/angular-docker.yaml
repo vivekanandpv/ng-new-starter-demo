@@ -15,6 +15,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        node-version: [18, 20, 22]
 
     steps:
       - name: Checkout the code
@@ -23,7 +27,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version: ${{matrix.node-version}}
           cache: npm
           cache-dependency-path: package-lock.json
 
