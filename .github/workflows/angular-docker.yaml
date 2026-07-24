@@ -38,6 +38,10 @@ jobs:
       - name: Lint
         run: npm run lint
 
+      - name: Setup tmate session
+        if: ${{ failure() }}
+        uses: mxschmitt/action-tmate@v3
+
       - name: Run unit tests
         run: npm run test -- --no-watch --coverage
 
