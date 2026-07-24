@@ -30,7 +30,9 @@ jobs:
       - name: Install dependencies
         run: |
           npm ci
+          echo "Before the mask"
           echo "::add-mask::ABCD-12345"
+          echo "After the mask"
 
       - name: Lint
         run: npm run lint
