@@ -22,6 +22,9 @@ jobs:
         exclude:
           - os: windows-latest
             node-version: 23
+        include:
+          - os: ubuntu-26
+            node-version: 26
 
     steps:
       - name: Checkout the code
