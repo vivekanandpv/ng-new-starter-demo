@@ -32,6 +32,7 @@ jobs:
           npm ci
           echo "Before the mask"
           echo "::add-mask::ABCD-12345"
+          echo "::error file=angular.json,line=15,col=2::Syntax error found during the step"
           echo "After the mask"
 
       - name: Lint
